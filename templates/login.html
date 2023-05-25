@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+     <style>
+        form{color:DodgerBlue;font-size:30px;text-align:center;padding:60px; background-image: url("https://i.picsum.photos/id/357/3888/2592.jpg?hmac=322FsZ93_k9v7NNFeCTlqk_gobPP_1mYJIQwk7GxjMc");  background-size: 100% 100%; background-position: center;}
+        input[type="submit"] {background-color:violet;font-size:15px;webkit-appearance: none;moz-appearance:none;appearance:none;padding: 4px;height: 4em;width: 8em;}
+    </style>
+</head>
+<body style="border: 20px solid black;">
+<form action="login" method="post">
+     {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Enter your username"><br><br>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter your password"><br><br>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
